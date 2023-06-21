@@ -26,13 +26,13 @@ if st.button("Submit"):
     prediction = rf_clf.predict_proba(x)[0, 1]
         # Output prediction
     st.text(f"Probability of severe sleep disturbance: {'{:.2%}'.format(round(prediction, 5))}")
-    if prediction < 0.254:
+    if prediction < 0.546:
         st.text(f"Risk group: low-risk group")
     else:
         st.text(f"Risk group: High-risk group")
-    if prediction < 0.254:
-        st.markdown(f"Recommendation: Routine preoperative evaluation and management with XXX.")
+    if prediction < 0.546:
+        st.markdown(f"Recommendation: Regular monitoring and observation: Although low-risk trauma patients have a lower likelihood of early mortality, they still require careful monitoring and observation. Regular assessment of vital signs, pain levels, and wound healing can help detect any signs of deterioration or complications. Early mobilization and rehabilitation: Initiating early mobilization and rehabilitation in low-risk trauma patients can help prevent complications and promote faster recovery. This includes physical therapy, occupational therapy, and psychological support to enhance functional outcomes and quality of life.")
     else:
-        st.markdown(f"xxxxxx.")
+        st.markdown(f"Recommendation: Timely resuscitation and stabilization: Immediate resuscitation and stabilization are critical for high-risk trauma patients. Prompt administration of intravenous fluids, blood products, and medications to maintain adequate perfusion and oxygenation can help prevent further complications and improve outcomes. Multidisciplinary care: High-risk trauma patients require comprehensive and multidisciplinary care. This includes close collaboration between trauma surgeons, intensivists, nurses, respiratory therapists, and other healthcare professionals. Regular multidisciplinary team meetings can ensure coordinated and optimal care.")
 st.subheader('Model information')
 st.markdown('The XGBoosting machine algorithm was employed to construct the model, yielding an outstanding area under the curve (AUC) value of 0.982 (95%CI: 0.976-0.990). This web-based calculator has been intricately designed to accurately assess the likelihood of 28-day mortality in individuals with orthopaedic trauma who have been admitted to the intensive care unit (ICU). Notably, this tool is effortlessly accessible at absolutely no expense and is exclusively intended for the purpose of advancing research endeavors.')
