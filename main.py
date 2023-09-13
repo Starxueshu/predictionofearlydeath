@@ -4,7 +4,7 @@ import joblib as jl
 import pandas as pd
 import streamlit as st
 
-st.header("Prediction of 28-day mortality among orthopaedic trauma patients admitted to ICU using machine learning techniques.")
+st.header("An internet artificial intelligence platform to predict early mortality in critical orthopaedic trauma patients: a prospective cohort study.")
 st.sidebar.title("Parameters Selection Panel")
 st.sidebar.markdown("Picking up parameters")
 
